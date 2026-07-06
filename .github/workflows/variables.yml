@@ -1,0 +1,26 @@
+name: Variables Demo
+
+on:
+  push:
+    branches:
+      - main
+
+# Workflow-level variables
+env:
+  APP_NAME: Calculator App
+  VERSION: 1.0
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    # Job-level variable
+    env:
+      OWNER: Srikar
+
+    steps:
+      - name: Print Variables
+        run: |
+          echo "App Name: $APP_NAME"
+          echo "Version: $VERSION"
+          echo "Owner: $OWNER"
